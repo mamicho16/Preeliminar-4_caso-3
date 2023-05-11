@@ -1,9 +1,9 @@
 import { Logger } from '../common'
-import { data_esencial } from '../repositories/data_esencial'
+import { data_esencialP } from '../repositories/data_esencialP'
 
 
-export class FeriaController {
-    private static instance: FeriaController;
+export class EsencialControllerP {
+    private static instance: EsencialControllerP;
     private log: Logger;
 
     private constructor()
@@ -17,18 +17,18 @@ export class FeriaController {
         }
     }
 
-    public static getInstance() : FeriaController
+    public static getInstance() : EsencialControllerP
     {
         if (!this.instance)
         {
-            this.instance = new FeriaController();
+            this.instance = new EsencialControllerP();
         }
         return this.instance;
     }
 
-    /*public getFilteredClients(filter: string) : Promise<any> 
+    public getVentas(filter: number) : Promise<any> 
     {
-        const feriadata = new data_esencial();
-        return feriadata.getClientsByFilter(filter);
-    }*/
+        const esencialdata = new data_esencialP();
+        return esencialdata.getVentas(filter);
+    }
 }

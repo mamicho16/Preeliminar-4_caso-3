@@ -2,7 +2,7 @@ import App from './app';
 import * as  http from 'http'
 import { Logger } from './common'
 
-const port = 5000;
+const port = 3000;
 const logger = new Logger();
 
 App.set('port', port);

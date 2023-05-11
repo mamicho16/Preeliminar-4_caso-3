@@ -18,7 +18,7 @@ const sqlConfig = {
     }
 }
 
-export class data_esencial {
+export class data_esencialP {
     private log: Logger;
 
     public constructor()
@@ -29,13 +29,13 @@ export class data_esencial {
     }
 
 
-    /*public getClientsByFilter(filter: string) : Promise<any>
+    public getVentas(filter: number) : Promise<any>
     {
         return sql.connect(sqlConfig).then((pool:any) => {
             return pool.request()
-                .input("searchcriteria", sql.VarChar(40), filter)
-                .execute("getFilteredClients")
+                .input("MontoVenta", sql.decimal(18,3), filter)
+                .execute("getVentas")
         });
-    }*/
+    }
 
 }
