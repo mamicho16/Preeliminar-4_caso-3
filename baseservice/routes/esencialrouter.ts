@@ -6,9 +6,10 @@ import { EsencialControllerNP } from '../controllers'
 const app = express();
 const log = new Logger();
 
-app.get("/getVentas", (req, res,next) => {
+app.post("/getVentasP", (req, res) => {
     EsencialControllerP.getInstance().getVentas(req.body.filter)
     .then((data:any)=>{
+        console.log(data);
         res.json(data);
     })
     .catch((err:any)=>{
@@ -18,7 +19,7 @@ app.get("/getVentas", (req, res,next) => {
 
 });
 
-app.get("/getVentas", (req, res,next) => {
+app.post("/getVentasNP", (req, res) => {
     EsencialControllerNP.getInstance().getVentas(req.body.filter)
     .then((data:any)=>{
         res.json(data);
