@@ -95,6 +95,9 @@ public class recoleccionResiduo extends javax.swing.JFrame {
         btnRecipientesDando = new javax.swing.JButton();
         btnConfirmar = new javax.swing.JButton();
         btnConsultar = new javax.swing.JButton();
+        btnRecipientesRecibiendoEliminar = new javax.swing.JButton();
+        btnRecipientesDandoEliminar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -198,6 +201,27 @@ public class recoleccionResiduo extends javax.swing.JFrame {
             }
         });
 
+        btnRecipientesRecibiendoEliminar.setText("Eliminar");
+        btnRecipientesRecibiendoEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRecipientesRecibiendoEliminarActionPerformed(evt);
+            }
+        });
+
+        btnRecipientesDandoEliminar.setText("Eliminar");
+        btnRecipientesDandoEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRecipientesDandoEliminarActionPerformed(evt);
+            }
+        });
+
+        btnEliminar.setText("Eiminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -230,7 +254,9 @@ public class recoleccionResiduo extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(txtRecipientesRecibiendo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(31, 31, 31)
-                                        .addComponent(btnRecipientesRecibiendo))))
+                                        .addComponent(btnRecipientesRecibiendo)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btnRecipientesRecibiendoEliminar))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(206, 206, 206)
                                 .addComponent(btnConsultar)))
@@ -249,8 +275,9 @@ public class recoleccionResiduo extends javax.swing.JFrame {
                                                 .addGroup(layout.createSequentialGroup()
                                                     .addComponent(txtRecipientesDando, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                    .addComponent(btnRecipientesDando)))
-                                            .addGap(184, 184, 184)))
+                                                    .addComponent(btnRecipientesDando)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                    .addComponent(btnRecipientesDandoEliminar)))))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(24, 24, 24)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -265,7 +292,9 @@ public class recoleccionResiduo extends javax.swing.JFrame {
                                                     .addComponent(txtRecipientes, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                                     .addComponent(btnAgregar)
-                                                    .addGap(210, 210, 210)))
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(btnEliminar)
+                                                    .addGap(169, 169, 169)))
                                             .addComponent(cbTipoDesecho, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel3)))))
                             .addGroup(layout.createSequentialGroup()
@@ -293,7 +322,9 @@ public class recoleccionResiduo extends javax.swing.JFrame {
                             .addComponent(txtRecipientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtPesoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(btnAgregar)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnAgregar)
+                            .addComponent(btnEliminar))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -316,7 +347,8 @@ public class recoleccionResiduo extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtRecipientesRecibiendo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnRecipientesRecibiendo))
+                            .addComponent(btnRecipientesRecibiendo)
+                            .addComponent(btnRecipientesRecibiendoEliminar))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -327,7 +359,8 @@ public class recoleccionResiduo extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtRecipientesDando, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnRecipientesDando))
+                            .addComponent(btnRecipientesDando)
+                            .addComponent(btnRecipientesDandoEliminar))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -403,7 +436,10 @@ public class recoleccionResiduo extends javax.swing.JFrame {
         System.out.println(query + " EXEC RegistrarMovimiento @producerName = '"+cbProductor.getSelectedItem()+"', @index = " + cbContratos.getSelectedItem() + ", @recipientesDando = @TVP1, @recipientesRecibiendo = @TVP2, @info = @movimientos");
         
         try {
-            st.executeQuery( query + " EXEC RegistrarMovimiento @producerName = '"+cbProductor.getSelectedItem()+"', @index = " + cbContratos.getSelectedItem() + ", @recipientesDando = @TVP1, @recipientesRecibiendo = @TVP2, @info = @movimientos");
+            ResultSet rs = st.executeQuery( query + " EXEC RegistrarMovimiento @producerName = '"+cbProductor.getSelectedItem()+"', @index = " + cbContratos.getSelectedItem() + ", @recipientesDando = @TVP1, @recipientesRecibiendo = @TVP2, @info = @movimientos");
+            while(rs.next()){
+                System.out.println(rs.getString(1));
+            }
         } catch (SQLException ex) {
             Logger.getLogger(recoleccionResiduo.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -457,6 +493,48 @@ public class recoleccionResiduo extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnConsultarActionPerformed
 
+    private void btnRecipientesDandoEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecipientesDandoEliminarActionPerformed
+        String recipiente = txtRecipientesDando.getText();
+        DefaultTableModel model = (DefaultTableModel) tblRecipientesDando.getModel();
+
+        if(recipiente != null){
+            Object columnIdValue = recipiente;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                if (model.getValueAt(i, 0).equals(columnIdValue)) {
+                    model.removeRow(i);
+                }
+            }
+        }    
+    }//GEN-LAST:event_btnRecipientesDandoEliminarActionPerformed
+
+    private void btnRecipientesRecibiendoEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecipientesRecibiendoEliminarActionPerformed
+        String recipiente = txtRecipientesRecibiendo.getText();
+        DefaultTableModel model = (DefaultTableModel) tblRecipientesRecibiendo.getModel();
+
+        if(recipiente != null){
+            Object columnIdValue = recipiente;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                if (model.getValueAt(i, 0).equals(columnIdValue)) {
+                    model.removeRow(i);
+                }
+            }
+        }    
+    }//GEN-LAST:event_btnRecipientesRecibiendoEliminarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        String desecho = (String) cbTipoDesecho.getSelectedItem();
+            DefaultTableModel model = (DefaultTableModel) tblDesechosAgregar.getModel();
+
+        if(desecho != null){
+            Object columnIdValue = desecho;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                if (model.getValueAt(i, 0).equals(columnIdValue)) {
+                    model.removeRow(i);
+                }
+            }
+        }
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -500,8 +578,11 @@ public class recoleccionResiduo extends javax.swing.JFrame {
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnConfirmar;
     private javax.swing.JButton btnConsultar;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnRecipientesDando;
+    private javax.swing.JButton btnRecipientesDandoEliminar;
     private javax.swing.JButton btnRecipientesRecibiendo;
+    private javax.swing.JButton btnRecipientesRecibiendoEliminar;
     private javax.swing.JComboBox<String> cbContratos;
     private javax.swing.JComboBox<String> cbProductor;
     private javax.swing.JComboBox<String> cbTipoDesecho;
