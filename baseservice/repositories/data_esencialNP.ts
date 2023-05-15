@@ -7,9 +7,15 @@ const sqlConfig = {
     password: "12345",
     database: "EsencialVerde",
     server: "localhost",
+    pool: {
+      max: 5,
+      min: 5,
+      idleTimeoutMillis: 30000
+    },
     options: {
       encrypt: true, 
-      trustServerCertificate: true 
+      trustServerCertificate: true,
+      requestTimeout: 180000 
     }
 }
 
@@ -19,18 +25,24 @@ export class data_esencialNP {
     public constructor()
     {
         this.log = new Logger();
-        
-        // via singleton, accediendo a un solo pool tengo una conexiona la base de datos
     }
 
 
-    public getVentas(filter: number) : Promise<any>
-    {
-        return sql.connect(sqlConfig).then((pool:any) => {
-            return pool.request()
-                .input("MontoVenta", sql.decimal(18,3), filter)
-                .execute("getVentas")
-        });
+    public async getVentas(filter: number) : Promise<any>
+    {   
+        const connection = await sql.connect(sqlConfig);
+        try {
+            const request = new sql.Request(connection);
+            request.input('montoVenta', sql.Decimal(18,3), filter);
+            const result = await request.execute('getVentas');
+            return result.recordset;
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+        finally {
+            await connection.close();
+        }
     }
 
 }
