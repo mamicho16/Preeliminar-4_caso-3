@@ -29,12 +29,11 @@ export class data_esencialP {
     }
 
 
-    public getVentas(filter: number) : Promise<any>
+    public getVentas(filter: Date) : Promise<any>
     {
-        console.log(filter);
         return sql.connect(sqlConfig).then((pool:any) => {
             return pool.request()
-                .input("montoVenta", sql.Decimal(18,3), filter)
+                .input("fecha", sql.Date, filter)
                 .execute("getVentas")
         });
     }

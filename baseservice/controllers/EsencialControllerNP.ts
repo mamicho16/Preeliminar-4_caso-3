@@ -26,7 +26,7 @@ export class EsencialControllerNP {
         return this.instance;
     }
 
-    public getVentas(filter: number) : Promise<any> 
+    public getVentas(filter: Date) : Promise<any> 
     {
         const esencialdata = new data_esencialNP();
         return esencialdata.getVentas(filter);

@@ -8,7 +8,7 @@ const sqlConfig = {
     database: "EsencialVerde",
     server: "localhost",
     pool: {
-      max: 5,
+      max: 20,
       min: 5,
       idleTimeoutMillis: 30000
     },
@@ -28,12 +28,12 @@ export class data_esencialNP {
     }
 
 
-    public async getVentas(filter: number) : Promise<any>
+    public async getVentas(filter: Date) : Promise<any>
     {   
         const connection = await sql.connect(sqlConfig);
         try {
             const request = new sql.Request(connection);
-            request.input('montoVenta', sql.Decimal(18,3), filter);
+            request.input('fecha', sql.Date, filter);
             const result = await request.execute('getVentas');
             return result.recordset;
         } catch (error) {
