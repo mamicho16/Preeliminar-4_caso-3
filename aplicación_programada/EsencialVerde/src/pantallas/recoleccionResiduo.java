@@ -18,6 +18,7 @@ import java.sql.CallableStatement;
 import javax.lang.model.util.Types;
 import java.sql.SQLType;
 import java.sql.Struct;
+import javax.swing.JOptionPane;
 
 
 
@@ -441,7 +442,7 @@ public class recoleccionResiduo extends javax.swing.JFrame {
                 System.out.println(rs.getString(1));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(recoleccionResiduo.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnConfirmarActionPerformed
 
