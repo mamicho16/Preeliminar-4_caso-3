@@ -45,14 +45,14 @@ public class recoleccionResiduo extends javax.swing.JFrame {
     public void llenarCB() throws SQLException{
          // llenar choice box de productores 
         
-        ResultSet rs = st.executeQuery("select nombre from productor");
+        ResultSet rs = st.executeQuery("EXEC nombresProductores ");
         while(rs.next()){
             cbProductor.addItem(rs.getString(1));
         }
         
         // llenar choice box de desechos
         
-        rs = st.executeQuery("select nombre from tipodesecho");
+        rs = st.executeQuery("EXEC nombresTipoDesechos ");
         while(rs.next()){
             cbTipoDesecho.addItem(rs.getString(1));
         }
