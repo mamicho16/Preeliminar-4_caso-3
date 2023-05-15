@@ -45,14 +45,12 @@ class Cliente(Base):
 # Se inicializa el engine con el path de sql server
 engine = create_engine('mssql+pyodbc://sa:Chorizo123@localhost:1433/EsencialVerde?driver=ODBC+Driver+17+for+SQL+Server')
 
-# funcion que obtiene todas las ventas que tenga un valora >= al dado
+# funcion que obtiene todas las ventas que tenga una fecha >= a la dada
 def get_ventas(fecha):
     try:
         
         Session = sessionmaker(bind=engine)
         session = Session()
-
-       # query = session.query(Ventas).filter(Ventas.monto >= monto_venta)
 
         query = session.query(Ventas.idventas,
         Ventas.monto,
