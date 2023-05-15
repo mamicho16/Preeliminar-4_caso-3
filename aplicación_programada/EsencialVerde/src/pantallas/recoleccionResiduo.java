@@ -95,7 +95,6 @@ public class recoleccionResiduo extends javax.swing.JFrame {
         btnRecipientesDando = new javax.swing.JButton();
         btnConfirmar = new javax.swing.JButton();
         btnConsultar = new javax.swing.JButton();
-        jProgressBar1 = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -111,11 +110,6 @@ public class recoleccionResiduo extends javax.swing.JFrame {
         });
 
         cbContratos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {null}));
-        cbContratos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbContratosActionPerformed(evt);
-            }
-        });
 
         tblDesechos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -279,9 +273,7 @@ public class recoleccionResiduo extends javax.swing.JFrame {
                                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(490, 490, 490)
-                        .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -338,8 +330,6 @@ public class recoleccionResiduo extends javax.swing.JFrame {
                             .addComponent(btnRecipientesDando))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
-                        .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
 
@@ -436,10 +426,6 @@ public class recoleccionResiduo extends javax.swing.JFrame {
 
     }//GEN-LAST:event_cbProductorActionPerformed
 
-    private void cbContratosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbContratosActionPerformed
-
-     }//GEN-LAST:event_cbContratosActionPerformed
-
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         String desecho = (String) cbTipoDesecho.getSelectedItem();
         String pesoTotal = txtPesoTotal.getText();
@@ -454,7 +440,6 @@ public class recoleccionResiduo extends javax.swing.JFrame {
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
         try {
-            // se va a correr el procedure en el cual yo le paso un 
             DefaultTableModel m = (DefaultTableModel)tblDesechos.getModel();
             m.setRowCount(0);
             Object rowData[] = new Object[3];
@@ -527,7 +512,6 @@ public class recoleccionResiduo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
