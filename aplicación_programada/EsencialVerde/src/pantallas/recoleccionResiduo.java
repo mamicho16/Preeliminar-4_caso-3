@@ -439,7 +439,10 @@ public class recoleccionResiduo extends javax.swing.JFrame {
         try {
             ResultSet rs = st.executeQuery( query + " EXEC RegistrarMovimiento @producerName = '"+cbProductor.getSelectedItem()+"', @index = " + cbContratos.getSelectedItem() + ", @recipientesDando = @TVP1, @recipientesRecibiendo = @TVP2, @info = @movimientos");
             while(rs.next()){
-                System.out.println(rs.getString(1));
+                if(rs.getString(1).equals("1")){
+                    JOptionPane.showMessageDialog(null, "Se logró registrar la recolección exitosamente", "EXTIO", JOptionPane.INFORMATION_MESSAGE);
+                }
+                
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
