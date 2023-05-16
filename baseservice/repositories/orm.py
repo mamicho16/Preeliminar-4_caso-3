@@ -5,7 +5,7 @@ from sqlalchemy.orm import DeclarativeBase
 
 class Base(DeclarativeBase):pass
 
-engine = create_engine('mssql+pyodbc://sa:Chorizo123@localhost:1433/EsencialVerde?driver=ODBC+Driver+17+for+SQL+Server')
+engine = create_engine('mssql+pyodbc://sa:12345@localhost:1433/EsencialVerde?driver=ODBC+Driver+17+for+SQL+Server')
 
 # Se declara las tablas que se van a utilizar en el orm
 class Ventas(Base):
